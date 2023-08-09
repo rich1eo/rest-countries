@@ -30,7 +30,7 @@ export default function App() {
   return (
     <>
       <DarkModeProvider>
-        <RouterProvider router={router} />;
+        <RouterProvider router={router} />
       </DarkModeProvider>
     </>
   );
