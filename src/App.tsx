@@ -5,6 +5,8 @@ import Countries from './pages/Countries';
 import Country from './pages/Country';
 
 import { countriesLoader } from './loaders/countriesLoader';
+import { countryLoader } from './loaders/countryLoader';
+import { DarkModeProvider } from './context/DarkModeContext';
 
 const router = createBrowserRouter([
   {
@@ -16,13 +18,20 @@ const router = createBrowserRouter([
         loader: countriesLoader,
       },
       {
-        path: '/country/:countryId',
+        path: '/country/:countryName',
         element: <Country />,
+        loader: countryLoader,
       },
     ],
   },
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <DarkModeProvider>
+        <RouterProvider router={router} />;
+      </DarkModeProvider>
+    </>
+  );
 }

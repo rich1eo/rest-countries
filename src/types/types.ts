@@ -82,19 +82,22 @@ export interface Name {
 }
 
 export interface NativeName {
-  ara: Ara;
+  ind: Ind;
 }
 
-export interface Ara {
+export interface Ind {
   official: string;
   common: string;
 }
 
 export interface Currencies {
-  SAR: Sar;
+  [key: string]: {
+    name: string;
+    symbol: string;
+  };
 }
 
-export interface Sar {
+export interface IDR {
   name: string;
   symbol: string;
 }
@@ -105,7 +108,7 @@ export interface Idd {
 }
 
 export interface Languages {
-  ara: string;
+  [key: string]: string;
 }
 
 export interface Translations {
@@ -312,4 +315,10 @@ export interface PostalCode {
 export interface IOption {
   value: string;
   label: string;
+}
+
+// Borders by country code
+
+export interface IBorderName {
+  name: Name;
 }

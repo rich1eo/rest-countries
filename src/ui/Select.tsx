@@ -4,6 +4,7 @@ import { ChangeEvent } from 'react';
 import { IOption } from '../types/types';
 
 const StyledSelect = styled.select`
+  background-color: var(--color-el);
   font-size: 1.4rem;
   padding: 1.8rem 2.2rem;
   border: none;

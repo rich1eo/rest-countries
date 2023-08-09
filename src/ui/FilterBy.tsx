@@ -13,6 +13,7 @@ export default function FilterBy({ options }: FilterByProps) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   function handleChange(event: ChangeEvent<HTMLSelectElement>) {
+    searchParams.delete('searchQuery');
     if (event.target.value === 'all') {
       searchParams.delete('filterBy');
       setSearchParams(searchParams);

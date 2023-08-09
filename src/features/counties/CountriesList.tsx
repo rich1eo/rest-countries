@@ -1,9 +1,9 @@
 import { useLoaderData } from 'react-router-dom';
 import { styled } from 'styled-components';
 
-import { CountriesType } from '../../types/types';
-
 import CountriesItem from './CountriesItem';
+
+import { CountriesType } from '../../types/types';
 
 const StyledCountriesList = styled.div`
   display: grid;
@@ -11,6 +11,10 @@ const StyledCountriesList = styled.div`
   gap: 7rem;
 
   margin-top: 2.5rem;
+
+  @media (max-width: 425px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 `;
 
 export default function CountriesList() {

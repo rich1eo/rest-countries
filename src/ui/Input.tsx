@@ -11,6 +11,10 @@ const Input = styled.input`
   &:disabled {
     background-color: var(--color-grey-200);
   }
+
+  @media (max-width: 768px) {
+    width: 25rem;
+  }
 `;
 
 export default Input;

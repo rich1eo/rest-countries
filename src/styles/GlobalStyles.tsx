@@ -17,10 +17,10 @@ const GlobalStyles = createGlobalStyle`
   }
 
   &.dark-mode {
-    --color-text: hsl(0, 0%, 100%)
-    --color-el: hsl(209, 23%, 22%)
-    --color-bg: hsl(207, 26%, 17%)
-    --color-input: hsl(0, 0%, 52%)
+    --color-text: hsl(0, 0%, 100%);
+    --color-el: hsl(209, 23%, 22%);
+    --color-bg: hsl(207, 26%, 17%);
+    --color-input: hsl(0, 0%, 52%);
 
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
     --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.3);
@@ -62,6 +62,10 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   font-size: 1.6rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 }
 
 input,
