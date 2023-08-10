@@ -103,7 +103,8 @@ export default function CountryItem({ country }: CountryItemProps) {
             <strong>Capital:</strong> {country.capital}
           </li>
           <li>
-            <strong>Top level domain:</strong> {country.tld.join(', ')}
+            <strong>Top level domain:</strong>{' '}
+            {country.tld?.join(', ') || 'none'}
           </li>
           <li>
             <strong>Currencies:</strong> {country.currencies[curKey].name}
