@@ -31,6 +31,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   --color-spinner: #2196f3;
+  --color-grey: hsl(0, 0%, 35%);
 
   --border-radius-tiny: 3px;
   --border-radius-sm: 5px;

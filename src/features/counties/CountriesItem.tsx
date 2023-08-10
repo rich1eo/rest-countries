@@ -6,6 +6,13 @@ import { formatPopulation } from '../../utils/utils';
 
 const StyledLink = styled(Link)`
   display: grid;
+
+  transition: all 0.2s;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+  }
 `;
 
 const StyledCountriesItem = styled.div`

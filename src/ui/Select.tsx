@@ -11,6 +11,7 @@ const StyledSelect = styled.select`
   border-radius: var(--border-radius-sm);
   font-weight: 600;
   box-shadow: var(--shadow-md);
+  cursor: pointer;
 `;
 
 interface SelectProps {

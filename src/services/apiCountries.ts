@@ -36,7 +36,6 @@ export async function getCountries(
 
 export async function getCountry(countryName: string) {
   const res = await fetch(`${URL_API}/alpha/${countryName}`);
-  console.log(res);
   if (!res.ok) throw new Error('Something went wrong during fetching country');
 
   const data: CountriesItemType[] = await res.json();
