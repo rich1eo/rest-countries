@@ -3,6 +3,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import AppLayout from './ui/AppLayout';
 import Countries from './pages/Countries';
 import Country from './pages/Country';
+import ErrorMessage from './ui/Error';
 
 import { countriesLoader } from './loaders/countriesLoader';
 import { countryLoader } from './loaders/countryLoader';
@@ -11,6 +12,7 @@ import { DarkModeProvider } from './context/DarkModeContext';
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <ErrorMessage />,
     children: [
       {
         path: '/',

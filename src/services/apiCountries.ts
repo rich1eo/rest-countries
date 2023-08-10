@@ -8,7 +8,7 @@ export async function getCountries(
 ) {
   if (region) {
     const res = await fetch(`${URL_API}/region/${region}`);
-    if (!res)
+    if (!res.ok)
       throw new Error(
         'Something went wrong during fetching countries by region'
       );
@@ -17,7 +17,7 @@ export async function getCountries(
     return data;
   } else if (searchQuery) {
     const res = await fetch(`${URL_API}/name/${searchQuery}`);
-    if (!res)
+    if (!res.ok)
       throw new Error(
         'Something went wrong during fetching countries by search query'
       );
@@ -26,7 +26,8 @@ export async function getCountries(
     return data;
   } else {
     const res = await fetch(`${URL_API}/all`);
-    if (!res) throw new Error('Something went wrong during fetching countries');
+    if (!res.ok)
+      throw new Error('Something went wrong during fetching countries');
 
     const data: CountriesType = await res.json();
     return data;
@@ -35,7 +36,8 @@ export async function getCountries(
 
 export async function getCountry(countryName: string) {
   const res = await fetch(`${URL_API}/alpha/${countryName}`);
-  if (!res) throw new Error('Something went wrong during fetching country');
+  console.log(res);
+  if (!res.ok) throw new Error('Something went wrong during fetching country');
 
   const data: CountriesItemType[] = await res.json();
 
