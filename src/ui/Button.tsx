@@ -8,7 +8,7 @@ const types = {
       margin-right: 0.8rem;
     }
 
-    @media (max-width: 425px) {
+    @media (max-width: var(--media-phone)) {
       padding: 0.7rem 1.6rem;
     }
   `,
@@ -28,6 +28,20 @@ const Button = styled.button<ButtonProps>`
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-lg);
   cursor: pointer;
+
+  & svg {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    @media (max-width: 768px) {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  @media (max-width: 425px) {
+    padding: 0.7rem 1.6rem;
+  }
 `;
 
 export default Button;

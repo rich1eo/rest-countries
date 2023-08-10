@@ -321,4 +321,5 @@ export interface IOption {
 
 export interface IBorderName {
   name: Name;
+  cca2: string;
 }

@@ -1,4 +1,4 @@
-import { CountriesItemType, CountriesType } from '../types/types';
+import { CountriesItemType, CountriesType, IBorderName } from '../types/types';
 
 const URL_API = 'https://restcountries.com/v3.1';
 
@@ -34,7 +34,7 @@ export async function getCountries(
 }
 
 export async function getCountry(countryName: string) {
-  const res = await fetch(`${URL_API}/name/${countryName}`);
+  const res = await fetch(`${URL_API}/alpha/${countryName}`);
   if (!res) throw new Error('Something went wrong during fetching country');
 
   const data: CountriesItemType[] = await res.json();
@@ -43,14 +43,14 @@ export async function getCountry(countryName: string) {
     const borders = [];
     for (const border of data[0].borders) {
       const borderNameRes = await fetch(
-        `${URL_API}/alpha/${border}?fields=name`
+        `${URL_API}/alpha/${border}?fields=name,cca2`
       );
 
       if (!borderNameRes)
         throw new Error('Something went wrong during fetching country');
 
-      const borderName = await borderNameRes.json();
-      borders.push(borderName.name.common);
+      const borderName: IBorderName = await borderNameRes.json();
+      borders.push(`${borderName.name.common}-${borderName.cca2}`);
     }
 
     data[0].borders = borders;

@@ -21,9 +21,11 @@ const DetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  flex-grow: 1;
 `;
 
 const Img = styled.img`
+  border-radius: var(--border-radius-md);
   max-width: 80rem;
   width: 100%;
 `;
@@ -117,9 +119,12 @@ export default function CountryItem({ country }: CountryItemProps) {
               <Button
                 key={border}
                 $type="border"
-                onClick={() => navigate(`/country/${border}`)}
+                onClick={() => {
+                  const borderCode = border.split('-')[1];
+                  navigate(`/country/${borderCode}`);
+                }}
               >
-                {border}
+                {border.split('-')[0]}
               </Button>
             ))}
           </Border>

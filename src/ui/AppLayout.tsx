@@ -6,6 +6,12 @@ import Spinner from './Spinner';
 
 const StyledMain = styled.main`
   padding: 3rem;
+
+  &:has(:only-child) {
+    display: flex;
+    flex-flow: column;
+    height: calc(100dvh - 100px);
+  }
 `;
 
 export default function AppLayout() {

@@ -41,7 +41,7 @@ interface CountriesItemProps {
 
 export default function CountriesItem({ country }: CountriesItemProps) {
   return (
-    <StyledLink to={`/country/${country.name.common}`}>
+    <StyledLink to={`/country/${country.cca2}`}>
       <StyledCountriesItem>
         <Flag src={country.flags.png} alt={`Flag of ${country.name.common}`} />
         <InfoContainter>
